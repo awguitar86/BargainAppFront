@@ -1,0 +1,21 @@
+@import '../../variables';
+
+.main-header {
+  width: 100vw;
+  height: 80px;
+  background: $dark;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-nav {
+  width: 95%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  img {
+    width: 200px;
+    height: 100%;
+  }
+}

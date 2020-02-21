@@ -1,13 +1,19 @@
 import React from 'react';
-import './App.css';
-import BargainLogo from './images/BargainLogo.svg';
+import './App.scss';
+import { Route, Switch } from 'react-router-dom';
+
+import MainHeader from './Components/MainHeader/MainHeader';
+import MainFooter from './Components/MainFooter/MainFooter';
+import Home from './Components/Home/Home';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={BargainLogo} alt="bargain logo" style={{width: "500px", height: "auto"}}/>
-      </header>
+      <MainHeader />
+      <Switch>
+        <Route exact path="/" component={Home} />
+      </Switch>
+      <MainFooter />
     </div>
   );
 }
