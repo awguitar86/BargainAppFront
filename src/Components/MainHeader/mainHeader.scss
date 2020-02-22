@@ -2,11 +2,12 @@
 
 .main-header {
   width: 100vw;
-  height: 80px;
   background: $dark;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 40px;
+  padding: 15px 0px 15px 0px;
 }
 
 .main-nav {
