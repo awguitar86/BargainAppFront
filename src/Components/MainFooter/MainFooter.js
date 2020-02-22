@@ -1,6 +1,6 @@
 import React from 'react';
 import './mainFooter.scss';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 function MainFooter() {
   return (
