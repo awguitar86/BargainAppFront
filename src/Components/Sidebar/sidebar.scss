@@ -1,0 +1,16 @@
+@import '../../variables';
+
+.sidebar {
+  background: $darkMidDark;
+  border-right: solid 2px $darkDark;
+  width: 18%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  z-index: 1000;
+}

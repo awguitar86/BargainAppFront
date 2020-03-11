@@ -8,11 +8,11 @@ function Home() {
   const [itemData, setItemData] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8080/cars').then(res => {
+    axios.get('http://178.128.180.91:8080/cars').then(res => {
       console.log(res.data.cars);
       setCarData(res.data.cars);
     });
-    axios.get('http://localhost:8080/items').then(res => {
+    axios.get('http://178.128.180.91:8080/items').then(res => {
       console.log(res.data.items);
       setItemData(res.data.items);
     });
@@ -25,7 +25,7 @@ function Home() {
           const imgIndex = img.split('/')[1];
           return (
             <img
-              src={`http://localhost:8080/${img}`}
+              src={`http://178.128.180.91:8080/${img}`}
               alt="car"
               key={imgIndex}
               style={{ display: 'block', width: '200px', height: '100%' }}
@@ -71,7 +71,7 @@ function Home() {
           const imgIndex = img.split('/')[1];
           return (
             <img
-              src={`http://localhost:8080/${img}`}
+              src={`http://178.128.180.91:8080/${img}`}
               alt="Item"
               key={imgIndex}
               style={{ display: 'block', width: '200px', height: '100%' }}
