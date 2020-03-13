@@ -21,23 +21,18 @@ function Home() {
   const displayCarData = !carData
     ? null
     : carData.map(car => {
-        const displayImages = car.imageUrls.map(img => {
-          const imgIndex = img.split('/')[1];
-          return (
-            <img
-              src={`http://178.128.180.91:8080/${img}`}
-              alt="car"
-              key={imgIndex}
-              style={{ display: 'block', width: '200px', height: '100%' }}
-            />
-          );
-        });
         const carIndex = `${car._id[-5]}${car._id[-4]}${car._id[-3]}${
           car._id[-2]
         }${car._id[-1]}`;
         return (
           <div key={carIndex}>
-            <div className="image-wrap">{displayImages}</div>
+            <div className="image-wrap">
+              <img
+                src={`http://178.128.180.91:8080/${car.imageUrls[0]}`}
+                alt="car"
+                style={{ display: 'block', width: '200px', height: '100%' }}
+              />
+            </div>
             <ul>
               <li>{car.title}</li>
               <li>{car.description}</li>
@@ -67,23 +62,18 @@ function Home() {
   const displayItemData = !itemData
     ? null
     : itemData.map(item => {
-        const displayItemImages = item.imageUrls.map(img => {
-          const imgIndex = img.split('/')[1];
-          return (
-            <img
-              src={`http://178.128.180.91:8080/${img}`}
-              alt="Item"
-              key={imgIndex}
-              style={{ display: 'block', width: '200px', height: '100%' }}
-            />
-          );
-        });
         const itemIndex = `${item._id[-5]}${item._id[-4]}${item._id[-3]}${
           item._id[-2]
         }${item._id[-1]}`;
         return (
           <div key={itemIndex}>
-            <div className="image-wrap">{displayItemImages}</div>
+            <div className="image-wrap">
+              <img
+                src={`http://178.128.180.91:8080/${item.imageUrls[0]}`}
+                alt="Item"
+                style={{ display: 'block', width: '200px', height: '100%' }}
+              />
+            </div>
             <ul>
               <li>{item.title}</li>
               <li>{item.description}</li>

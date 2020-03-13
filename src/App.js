@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <MainHeader />
-      <div>
+      <div className="main-body">
         <Sidebar />
         <Switch>
           <Route exact path="/" component={Home} />
