@@ -37,7 +37,7 @@ function Home() {
             <ul>
               <li>{car.title}</li>
               <li>{car.location}</li>
-              <li>{car.sellerType}</li>
+              <li>${car.price}</li>
             </ul>
           </div>
         );
@@ -61,8 +61,8 @@ function Home() {
             </div>
             <ul>
               <li>{item.title}</li>
-              <li>{item.price}</li>
               <li>{item.location}</li>
+              <li>${item.price}</li>
             </ul>
           </div>
         );
