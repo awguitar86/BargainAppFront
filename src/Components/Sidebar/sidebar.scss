@@ -1,16 +1,21 @@
 @import '../../variables';
 
 .sidebar {
-  background: $darkMidDark;
+  background: $darkMid;
   border-right: solid 2px $darkDark;
   width: 300px;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-start;
   position: fixed;
-  top: 70px;
+  top: 0px;
   left: 0;
   z-index: 1000;
+}
+.bargain-logo {
+  width: 80%;
+  height: auto;
+  margin-top: 40px;
 }

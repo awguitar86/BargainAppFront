@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './sidebar.scss';
+import BargainLogo from '../../images/BargainLogo.svg';
 
 function Sidebar() {
   return (
     <div className="sidebar">
-      <h2>Sidebar</h2>
+      <img src={BargainLogo} alt="bargain logo" className="bargain-logo" />
     </div>
   );
 }
