@@ -2,48 +2,36 @@ import React, { useState, useEffect } from 'react';
 import './home.scss';
 // import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { useQuery } from '@apollo/react-hooks';
+import { gql } from 'apollo-boost';
+
+const ITEMS = gql`
+  query {
+    Items {
+      id
+      title
+      category
+      condition
+      description
+      price
+      isFirmOnPrice
+      location
+      imageUrl
+    }
+  }
+`;
 
 function Home() {
   const [carData, setCarData] = useState([]);
-  const [itemData, setItemData] = useState([]);
+  const { loading, error, data } = useQuery(ITEMS);
+
+  console.log(data ? data.Items : null);
 
   useEffect(() => {
-    const graphqlQuery = {
-      query: `
-        Items {
-          id
-          title
-          category
-          condition
-          description
-          price
-          isFirmOnPrice
-          location
-          imageUrl
-        }
-      `,
-    };
     axios.get('http://178.128.180.91:8080/cars').then((res) => {
       console.log(res.data.cars);
       setCarData(res.data.cars);
     });
-    fetch('http://localhost:4000', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(graphqlQuery),
-    })
-      .then((resData) => {
-        if (resData.errors) {
-          throw new Error('Fetching status failed!');
-        }
-        // setItemData(resData);
-        console.log(resData);
-      })
-      .catch((err) => {
-        throw err;
-      });
   }, []);
 
   const displayCarData = !carData
@@ -76,12 +64,38 @@ function Home() {
         );
       });
 
-  // const displayItemData
+  const displayItems = !data
+    ? null
+    : data.Items.map((item) => {
+        return (
+          <div key={item.id} className="home-car">
+            <div className="home-image-wrap">
+              <img
+                src={`http://localhost:8080/${item.imageUrl}`}
+                alt="car"
+                className="home-car-img"
+              />
+            </div>
+            <ul className="home-car-info">
+              <li className="home-car-info-item car-title">{item.title}</li>
+              <li className="home-car-info-item car-price">${item.price}</li>
+              <li className="home-car-info-item car-location">
+                {item.location}
+              </li>
+            </ul>
+          </div>
+        );
+      });
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error :(</p>;
 
   return (
     <div className="home-wrap">
       <h2>Cars</h2>
       <div className="home-car-wrap">{displayCarData}</div>
+      <h2>Item</h2>
+      <div className="home-car-wrap">{displayItems}</div>
     </div>
   );
 }

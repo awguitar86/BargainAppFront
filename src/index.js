@@ -5,14 +5,22 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Router } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from '@apollo/react-hooks';
+
+const client = new ApolloClient({
+  uri: 'http://localhost:4000/',
+});
 
 ReactDOM.render(
-  <Router
-    onUpdate={() => window.scrollTo(0, 0)}
-    history={createBrowserHistory()}
-  >
-    <App />
-  </Router>,
+  <ApolloProvider client={client}>
+    <Router
+      onUpdate={() => window.scrollTo(0, 0)}
+      history={createBrowserHistory()}
+    >
+      <App />
+    </Router>
+  </ApolloProvider>,
   document.getElementById('root')
 );
 
