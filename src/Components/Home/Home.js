@@ -17,10 +17,11 @@ function Home() {
   const displayCarData = !carData
     ? null
     : carData.map((car) => {
-        const carIndex =
-          Math.floor(Math.random() * 100 + 1) *
-          Math.floor(Math.random() * 100 + 1) *
-          car.price;
+        // const carIndex =
+        //   Math.floor(Math.random() * 100 + 1) *
+        //   Math.floor(Math.random() * 100 + 1) *
+        //   car.price;
+        const carIndex = car._id;
         return (
           <div key={carIndex} className="home-car">
             <div className="home-image-wrap">
