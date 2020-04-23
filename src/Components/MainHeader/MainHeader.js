@@ -1,12 +1,15 @@
 import React from 'react';
 import './mainHeader.scss';
-// import { Link } from 'react-router-dom';
+import BargainLogo from '../../images/BargainLogo.svg';
+import { Link } from 'react-router-dom';
 
 function MainHeader() {
   return (
     <div className="main-header">
       <nav className="main-nav">
-        <h2>Navigation</h2>
+        <Link to="/">
+          <img src={BargainLogo} alt="Bargain Logo" />
+        </Link>
       </nav>
     </div>
   );

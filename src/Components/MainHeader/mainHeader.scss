@@ -11,13 +11,12 @@
 }
 
 .main-nav {
-  width: 100%;
+  width: 90%;
   height: 100%;
-  margin-left: 300px;
   display: flex;
   align-items: center;
-  h2 {
-    color: white;
-    margin-left: 40px;
+  img {
+    width: 200px;
+    height: 100%;
   }
 }
