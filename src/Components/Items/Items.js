@@ -41,6 +41,8 @@ function Items() {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
+  console.log(data.Items);
+
   return (
     <div className="items-wrap">
       <h2>Items</h2>
