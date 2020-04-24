@@ -10,13 +10,38 @@
   position: fixed;
 }
 
-.main-nav {
+.main-header-wrap {
   width: 90%;
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+.bargain-logo {
+  text-decoration: none;
   img {
     width: 200px;
     height: 100%;
+  }
+}
+
+.main-nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 60px;
+  a {
+    text-decoration: none;
+    margin-left: 40px;
+    color: $light;
+    font-family: $font;
+    font-weight: 600;
+    font-size: 14pt;
+    transition: ease-in-out 0.2s;
+    border-radius: 5px;
+    padding: 10px;
+    &:hover {
+      box-shadow: 0px 0px 1px 1px $light;
+    }
   }
 }
