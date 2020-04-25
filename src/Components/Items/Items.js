@@ -45,7 +45,7 @@ function Items() {
 
   return (
     <div className="items-wrap">
-      <h2>Items</h2>
+      <h2>Classifieds</h2>
       <div className="items-items-wrap">{displayItems}</div>
     </div>
   );

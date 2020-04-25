@@ -55,3 +55,16 @@
 .car-location {
   font-size: 14px;
 }
+@media only screen and (max-width: 48rem) {
+  .cars-items-wrap {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+  }
+}
+
+@media only screen and (max-width: 26rem) {
+  .cars-items-wrap {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+  }
+}

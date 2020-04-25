@@ -16,6 +16,8 @@ function ItemDetails(props) {
         isFirmOnPrice
         location
         imageUrl
+        sellerName
+        sellerPhone
       }
     }
   `;
@@ -31,17 +33,43 @@ function ItemDetails(props) {
       location,
       isFirmOnPrice,
       imageUrl,
+      sellerName,
+      sellerPhone,
     } = data.Item;
     return (
-      <div className="item-details-wrap" style={{ color: 'white' }}>
-        <img src={`http://localhost:8080/${imageUrl}`} alt={title} />
-        <h2>{title}</h2>
-        <h3>Price: ${price}</h3>
-        <h3>Description: {description}</h3>
-        <h3>Category: {category}</h3>
-        <h3>Condition: {condition}</h3>
-        <h3>Location: {location}</h3>
-        <h3>Firm on Price: {isFirmOnPrice ? 'Yes' : 'No'}</h3>
+      <div className="item-details-wrap">
+        <div className="item-details-left">
+          <img
+            src={`http://localhost:8080/${imageUrl}`}
+            alt={title}
+            className="item-details-img"
+          />
+          <div className="item-details-left-text">
+            <h1>{title}</h1>
+            <h2>${price}</h2>
+            <h3>Seller Name: {sellerName}</h3>
+            <h3>Seller Phone: {sellerPhone}</h3>
+            <h3>Location: {location}</h3>
+          </div>
+        </div>
+        <div className="item-details-text">
+          <h3>
+            Description:{' '}
+            <span style={{ fontWeight: 'normal' }}>{description}</span>
+          </h3>
+          <h3>
+            Condition: <span style={{ fontWeight: 'normal' }}>{condition}</span>
+          </h3>
+          <h3>
+            Category: <span style={{ fontWeight: 'normal' }}>{category}</span>
+          </h3>
+          <h3>
+            Firm on Price:{' '}
+            <span style={{ fontWeight: 'normal' }}>
+              {isFirmOnPrice ? 'Yes' : 'No'}
+            </span>
+          </h3>
+        </div>
       </div>
     );
   } else {

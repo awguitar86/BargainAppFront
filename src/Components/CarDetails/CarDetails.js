@@ -55,21 +55,23 @@ function CarDetails(props) {
       <div className="car-details-wrap">
         <div className="car-left">
           <img src={`http://localhost:8080/${imageUrls[0]}`} alt="car" />
-          <h1>{title}</h1>
-          <h2>${price}</h2>
-          <h3>
-            Seller Name:{' '}
-            <span style={{ fontWeight: 'normal' }}>{sellerName}</span>
-          </h3>
-          <h3>
-            Seller Phone:{' '}
-            <span style={{ fontWeight: 'normal' }}>{sellerPhone}</span>
-          </h3>
-          <h3>{location}</h3>
-          <h3>
-            Description:{' '}
-            <span style={{ fontWeight: 'normal' }}>{description}</span>
-          </h3>
+          <div className="car-left-text">
+            <h1>{title}</h1>
+            <h2>${price}</h2>
+            <h3>
+              Seller Name:{' '}
+              <span style={{ fontWeight: 'normal' }}>{sellerName}</span>
+            </h3>
+            <h3>
+              Seller Phone:{' '}
+              <span style={{ fontWeight: 'normal' }}>{sellerPhone}</span>
+            </h3>
+            <h3>{location}</h3>
+            <h3>
+              Description:{' '}
+              <span style={{ fontWeight: 'normal' }}>{description}</span>
+            </h3>
+          </div>
         </div>
         <div className="car-specs">
           <h2>Specifications</h2>
