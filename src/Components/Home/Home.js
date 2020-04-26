@@ -14,7 +14,6 @@ const ITEMS = gql`
       condition
       description
       price
-      isFirmOnPrice
       location
       imageUrl
     }
@@ -26,7 +25,7 @@ function Home() {
   const [allData, setAllData] = useState([]);
 
   useEffect(() => {
-    axios.get('http://178.128.180.91:8080/cars').then((res) => {
+    axios.get('http://localhost:8080/cars').then((res) => {
       console.log(res.data.cars);
       if (data) {
         setAllData([...res.data.cars, ...data.Items]);
@@ -73,7 +72,9 @@ function Home() {
               </div>
               <ul className="home-item-info">
                 <li className="home-item-info-item home-item-title">
-                  {item.title}
+                  {item.title
+                    ? item.title
+                    : `${item.year} ${item.make} ${item.model}`}
                 </li>
                 <li className="home-item-info-item home-item-price">
                   ${item.price}

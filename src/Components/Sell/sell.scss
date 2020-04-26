@@ -1,1 +1,209 @@
 @import '../../variables';
+
+.sell-wrap {
+  width: 90%;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+}
+.sell-type-btns {
+  button {
+    width: 140px;
+    height: 40px;
+    background: $blue;
+    color: white;
+    margin-right: 30px;
+    transition: ease-in-out 0.3s;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 10pt;
+    font-family: $font;
+    &:hover {
+      background: darken($blue, 10%);
+    }
+  }
+}
+.new-car-wrap {
+  color: white;
+  margin-bottom: 40px;
+  h1 {
+    margin: 0;
+    margin-top: 20px;
+  }
+}
+.car-listing-form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.car-general-info {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  input {
+    width: 100%;
+    height: 25px;
+    padding: 5px;
+    margin-bottom: 20px;
+    background: $darkLight;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-family: $font;
+    font-size: 10pt;
+  }
+  textarea {
+    width: 100%;
+    height: 75px;
+    padding: 5px;
+    margin-bottom: 20px;
+    background: $darkLight;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-family: $font;
+    font-size: 10pt;
+  }
+  label {
+    width: 100%;
+    padding: 10px 5px 5px 5px;
+    border-radius: 4px;
+    font-size: 11pt;
+    font-family: $font;
+    background: $darkLight;
+  }
+}
+#image {
+  background: none;
+  padding: 0;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+.car-mechanical-specs {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  input {
+    width: 100%;
+    height: 25px;
+    padding: 5px;
+    margin-bottom: 20px;
+    background: $darkLight;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-family: $font;
+    font-size: 10pt;
+  }
+}
+.car-contact-info {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  input {
+    width: 100%;
+    height: 25px;
+    padding: 5px;
+    margin-bottom: 20px;
+    background: $darkLight;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-family: $font;
+    font-size: 10pt;
+  }
+}
+.new-item-wrap {
+  color: white;
+  margin-bottom: 75px;
+  h1 {
+    margin: 0;
+    margin-top: 20px;
+  }
+}
+.item-listing-form {
+  width: 100%;
+  display: flex;
+}
+.item-general-info {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-right: 60px;
+  input {
+    width: 100%;
+    height: 25px;
+    padding: 5px;
+    margin-bottom: 20px;
+    background: $darkLight;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-family: $font;
+    font-size: 10pt;
+  }
+  textarea {
+    width: 100%;
+    height: 75px;
+    padding: 5px;
+    margin-bottom: 20px;
+    background: $darkLight;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-family: $font;
+    font-size: 10pt;
+  }
+  label {
+    width: 100%;
+    padding: 10px 5px 5px 5px;
+    border-radius: 4px;
+    font-size: 11pt;
+    font-family: $font;
+    background: $darkLight;
+  }
+}
+#item-image {
+  background: none;
+  padding: 0;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+.item-contact-info {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  input {
+    width: 100%;
+    height: 25px;
+    padding: 5px;
+    margin-bottom: 20px;
+    background: $darkLight;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-family: $font;
+    font-size: 10pt;
+  }
+}
+.listing-form-btn {
+  width: 100%;
+  margin-top: 20px;
+  button {
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background: $blue;
+    font-size: 11pt;
+    font-family: $font;
+    font-weight: 600;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+    &:hover {
+      background: darken($blue, 10%);
+    }
+  }
+}

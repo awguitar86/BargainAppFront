@@ -7,7 +7,7 @@ function Cars() {
   const [carData, setCarData] = useState([]);
 
   useEffect(() => {
-    axios.get('http://178.128.180.91:8080/cars').then((res) => {
+    axios.get('http://localhost:8080/cars').then((res) => {
       console.log(res.data.cars);
       setCarData(res.data.cars);
     });
@@ -20,11 +20,14 @@ function Cars() {
           <CarsItem
             key={car._id}
             id={car._id}
-            title={car.title}
+            year={car.year}
+            make={car.make}
+            model={car.model}
             price={car.price}
             mileage={car.mileage}
             location={car.location}
             imageUrls={car.imageUrls}
+            imageUrl={car.imageUrl}
           />
         );
       });

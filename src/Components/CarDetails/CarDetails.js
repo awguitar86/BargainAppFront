@@ -35,7 +35,6 @@ function CarDetails(props) {
       doorCount,
       driveType,
       fuelType,
-      isFirmOnPrice,
       location,
       make,
       mileage,
@@ -43,20 +42,23 @@ function CarDetails(props) {
       price,
       sellerName,
       sellerPhone,
-      title,
       titleType,
       transmission,
       vin,
       year,
       imageUrls,
+      imageUrl,
     } = carData;
 
     return (
       <div className="car-details-wrap">
         <div className="car-left">
-          <img src={`http://localhost:8080/${imageUrls[0]}`} alt="car" />
+          <img
+            src={`http://localhost:8080/${imageUrls ? imageUrls[0] : imageUrl}`}
+            alt="car"
+          />
           <div className="car-left-text">
-            <h1>{title}</h1>
+            <h1>{`${year} ${make} ${model}`}</h1>
             <h2>${price}</h2>
             <h3>
               Seller Name:{' '}
@@ -130,10 +132,6 @@ function CarDetails(props) {
           <div>
             <h3>Drive Type:</h3>
             <p>{driveType}</p>
-          </div>
-          <div>
-            <h3>Firm on Price:</h3>
-            <p>{isFirmOnPrice ? 'Yes' : 'No'}</p>
           </div>
         </div>
       </div>

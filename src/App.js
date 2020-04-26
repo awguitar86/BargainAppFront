@@ -10,6 +10,7 @@ import CarDetails from './Components/CarDetails/CarDetails';
 import Items from './Components/Items/Items';
 // import Sidebar from './Components/Sidebar/Sidebar';
 import ItemDetails from './Components/ItemDetails/ItemDetails';
+import Sell from './Components/Sell/Sell';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route exact path="/cars/:id" component={CarDetails} />
           <Route exact path="/items" component={Items} />
           <Route path="/items/:id" component={ItemDetails} />
+          <Route path="/sell" component={Sell} />
         </Switch>
       </div>
       <MainFooter />

@@ -13,7 +13,6 @@ const ITEMS = gql`
       condition
       description
       price
-      isFirmOnPrice
       location
       imageUrl
     }
