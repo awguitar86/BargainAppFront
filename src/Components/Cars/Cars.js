@@ -7,7 +7,7 @@ function Cars() {
   const [carData, setCarData] = useState([]);
 
   useEffect(() => {
-    axios.get('http://178.128.180.91:8080/cars').then((res) => {
+    axios.get('https://bargainapp.dev/cars').then((res) => {
       console.log(res.data.cars);
       setCarData(res.data.cars);
     });

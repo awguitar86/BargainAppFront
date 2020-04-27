@@ -9,7 +9,7 @@ function ItemsItem(props) {
     <Link to={`/items/${id}`} className="items-item">
       <div className="item-image-wrap">
         <img
-          src={`http://178.128.180.91:8080/${imageUrl}`}
+          src={`https://bargainapp.dev/${imageUrl}`}
           alt="item"
           className="item-img"
         />

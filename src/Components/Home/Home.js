@@ -25,7 +25,7 @@ function Home() {
   const [allData, setAllData] = useState([]);
 
   useEffect(() => {
-    axios.get('http://178.128.180.91:8080/cars').then((res) => {
+    axios.get('https://bargainapp.dev/cars').then((res) => {
       console.log(res.data.cars);
       if (data) {
         setAllData([...res.data.cars, ...data.Items]);
@@ -63,7 +63,7 @@ function Home() {
             >
               <div className="home-image-wrap">
                 <img
-                  src={`http://178.128.180.91:8080/${
+                  src={`https://bargainapp.dev/${
                     item.imageUrls ? item.imageUrls[0] : item.imageUrl
                   }`}
                   alt="classified item"

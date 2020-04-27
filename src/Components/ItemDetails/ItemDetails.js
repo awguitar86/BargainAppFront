@@ -40,7 +40,7 @@ function ItemDetails(props) {
       <div className="item-details-wrap">
         <div className="item-details-left">
           <img
-            src={`http://178.128.180.91:8080/${imageUrl}`}
+            src={`https://bargainapp.dev/${imageUrl}`}
             alt={title}
             className="item-details-img"
           />

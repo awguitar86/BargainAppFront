@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './sell.scss';
-import axios from 'axios';
 
 function NewCar() {
   const [file, setFile] = useState();
@@ -39,7 +38,7 @@ function NewCar() {
     e.preventDefault();
     const formData = new FormData();
     formData.append('image', file);
-    let url = 'http://178.128.180.91:8080/image';
+    let url = 'https://bargainapp.dev/image';
     let method = 'POST';
     fetch(url, {
       method: method,
@@ -76,7 +75,7 @@ function NewCar() {
           sellerName: sellerName,
           sellerPhone: sellerPhone,
         };
-        fetch('http://178.128.180.91:8080/cars', {
+        fetch('https://bargainapp.dev/cars', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

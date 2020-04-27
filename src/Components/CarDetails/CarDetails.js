@@ -55,9 +55,7 @@ function CarDetails(props) {
       <div className="car-details-wrap">
         <div className="car-left">
           <img
-            src={`http://178.128.180.91:8080/${
-              imageUrl ? imageUrl : imageUrls[0]
-            }`}
+            src={`https://bargainapp.dev/${imageUrl ? imageUrl : imageUrls[0]}`}
             alt="car"
           />
           <div className="car-left-text">
