@@ -6,7 +6,7 @@ function ItemsItem(props) {
   const { id, imageUrl, title, price, location } = props;
 
   return (
-    <Link to={`/item/${id}`} className="items-item">
+    <Link to={`/items/${id}`} className="items-item">
       <div className="item-image-wrap">
         <img
           src={`http://localhost:8080/${imageUrl}`}

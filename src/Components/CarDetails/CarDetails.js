@@ -55,7 +55,7 @@ function CarDetails(props) {
       <div className="car-details-wrap">
         <div className="car-left">
           <img
-            src={`http://localhost:8080/${imageUrls ? imageUrls[0] : imageUrl}`}
+            src={`http://localhost:8080/${imageUrl ? imageUrl : imageUrls[0]}`}
             alt="car"
           />
           <div className="car-left-text">

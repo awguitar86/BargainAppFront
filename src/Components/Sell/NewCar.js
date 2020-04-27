@@ -17,7 +17,7 @@ function NewCar() {
   const [description, setDescription] = useState();
   const [doorCount, setDoorCount] = useState();
   const [cylinders, setCylinders] = useState();
-  const [transmisson, setTransmisson] = useState();
+  const [transmission, setTransmission] = useState();
   const [fuelType, setFuelType] = useState();
   const [driveType, setDriveType] = useState();
   const [condition, setCondition] = useState();
@@ -64,7 +64,7 @@ function NewCar() {
           vin: vin,
           titleType: titleType,
           color: color,
-          transmission: transmisson,
+          transmission: transmission,
           cylinders: cylinders,
           fuelType: fuelType,
           doorCount: doorCount,
@@ -105,78 +105,118 @@ function NewCar() {
       <div className="car-listing-form">
         <div className="car-general-info">
           <h3>General Information</h3>
-          <input
-            type="number"
-            name="year"
-            id="year"
-            placeholder="Year"
-            onChange={(e) => setYear(e.target.value)}
-          />
-          <input
-            type="text"
-            name="make"
-            id="make"
-            placeholder="Make"
-            onChange={(e) => setMake(e.target.value)}
-          />
-          <input
-            type="text"
-            name="model"
-            id="model"
-            placeholder="Model"
-            onChange={(e) => setModel(e.target.value)}
-          />
-          <input
-            type="number"
-            name="mileage"
-            id="mileage"
-            placeholder="Mileage"
-            onChange={(e) => setMileage(e.target.value)}
-          />
-          <input
-            type="text"
-            name="bodyType"
-            id="bodyType"
-            placeholder="Body Type"
-            onChange={(e) => setBodyType(e.target.value)}
-          />
-          <input
-            type="text"
-            name="titleType"
-            id="titleType"
-            placeholder="Title Type"
-            onChange={(e) => setTitleType(e.target.value)}
-          />
-          <input
-            type="text"
-            name="color"
-            id="color"
-            placeholder="Color"
-            onChange={(e) => setColor(e.target.value)}
-          />
-          <input
-            type="text"
-            name="vin"
-            id="vin"
-            placeholder="VIN"
-            onChange={(e) => setVin(e.target.value)}
-          />
-          <input
-            type="number"
-            name="price"
-            id="price"
-            placeholder="Asking Price"
-            onChange={(e) => setPrice(e.target.value)}
-          />
-          <textarea
-            type="text"
-            name="description"
-            id="description"
-            placeholder="Description"
-            rows="3"
-            onChange={(e) => setDescription(e.target.value)}
-          />
-          <label htmlFor="image">
+          <label htmlFor="year">
+            Year
+            <input
+              type="number"
+              name="year"
+              id="year"
+              defaultValue={year}
+              placeholder="Year"
+              onChange={(e) => setYear(e.target.value)}
+            />
+          </label>
+          <label htmlFor="make">
+            Make
+            <input
+              type="text"
+              name="make"
+              id="make"
+              defaultValue={make}
+              placeholder="Make"
+              onChange={(e) => setMake(e.target.value)}
+            />
+          </label>
+          <label htmlFor="model">
+            Model
+            <input
+              type="text"
+              name="model"
+              id="model"
+              defaultValue={model}
+              placeholder="Model"
+              onChange={(e) => setModel(e.target.value)}
+            />
+          </label>
+          <label htmlFor="mileage">
+            Mileage
+            <input
+              type="number"
+              name="mileage"
+              id="mileage"
+              defaultValue={mileage}
+              placeholder="Mileage"
+              onChange={(e) => setMileage(e.target.value)}
+            />
+          </label>
+          <label htmlFor="bodyType">
+            Body Type
+            <input
+              type="text"
+              name="bodyType"
+              id="bodyType"
+              defaultValue={bodyType}
+              placeholder="Body Type"
+              onChange={(e) => setBodyType(e.target.value)}
+            />
+          </label>
+          <label htmlFor="titleType">
+            Title Type
+            <input
+              type="text"
+              name="titleType"
+              id="titleType"
+              defaultValue={titleType}
+              placeholder="Title Type"
+              onChange={(e) => setTitleType(e.target.value)}
+            />
+          </label>
+          <label htmlFor="color">
+            Color
+            <input
+              type="text"
+              name="color"
+              id="color"
+              defaultValue={color}
+              placeholder="Color"
+              onChange={(e) => setColor(e.target.value)}
+            />
+          </label>
+          <label htmlFor="vin">
+            VIN
+            <input
+              type="text"
+              name="vin"
+              id="vin"
+              defaultValue={vin}
+              placeholder="VIN"
+              onChange={(e) => setVin(e.target.value)}
+            />
+          </label>
+          <label htmlFor="price">
+            Price
+            <input
+              type="number"
+              name="price"
+              id="price"
+              defaultValue={price}
+              placeholder="Asking Price"
+              onChange={(e) => setPrice(e.target.value)}
+            />
+          </label>
+          <label htmlFor="description">
+            Description
+            <textarea
+              type="text"
+              name="description"
+              id="description"
+              defaultValue={description}
+              placeholder="Description"
+              rows="3"
+              onChange={(e) => setDescription(e.target.value)}
+            />
+          </label>
+          <label htmlFor="image" id="image-upload-label">
             Select an Image
             <input
               type="file"
@@ -189,83 +229,125 @@ function NewCar() {
         </div>
         <div className="car-mechanical-specs">
           <h3>Mechanical Specifications</h3>
-          <input
-            type="number"
-            name="doorCount"
-            id="doorCount"
-            placeholder="Doors"
-            onChange={(e) => setDoorCount(e.target.value)}
-          />
-          <input
-            type="number"
-            name="cylinders"
-            id="cylinders"
-            placeholder="Cylinders"
-            onChange={(e) => setCylinders(e.target.value)}
-          />
-          <input
-            type="text"
-            name="transmission"
-            id="transmission"
-            placeholder="Transmission"
-            onChange={(e) => setTransmisson(e.target.value)}
-          />
-          <input
-            type="text"
-            name="fuelType"
-            id="fuelType"
-            placeholder="Fuel"
-            onChange={(e) => setFuelType(e.target.value)}
-          />
-          <input
-            type="text"
-            name="driveType"
-            id="driveType"
-            placeholder="Drive Type"
-            onChange={(e) => setDriveType(e.target.value)}
-          />
-          <input
-            type="text"
-            name="condition"
-            id="condition"
-            placeholder="Condition"
-            onChange={(e) => setCondition(e.target.value)}
-          />
+          <label htmlFor="doorCount">
+            Door Count
+            <input
+              type="number"
+              name="doorCount"
+              id="doorCount"
+              defaultValue={doorCount}
+              placeholder="Doors"
+              onChange={(e) => setDoorCount(e.target.value)}
+            />
+          </label>
+          <label htmlFor="cylinders">
+            Cylinders
+            <input
+              type="number"
+              name="cylinders"
+              id="cylinders"
+              defaultValue={cylinders}
+              placeholder="Cylinders"
+              onChange={(e) => setCylinders(e.target.value)}
+            />
+          </label>
+          <label htmlFor="transmission">
+            Transmission
+            <input
+              type="text"
+              name="transmission"
+              id="transmission"
+              defaultValue={transmission}
+              placeholder="Transmission"
+              onChange={(e) => setTransmission(e.target.value)}
+            />
+          </label>
+          <label htmlFor="fuelType">
+            FuelType
+            <input
+              type="text"
+              name="fuelType"
+              id="fuelType"
+              defaultValue={fuelType}
+              placeholder="Fuel"
+              onChange={(e) => setFuelType(e.target.value)}
+            />
+          </label>
+          <label htmlFor="driveType">
+            Drive Type
+            <input
+              type="text"
+              name="driveType"
+              id="driveType"
+              defaultValue={driveType}
+              placeholder="Drive Type"
+              onChange={(e) => setDriveType(e.target.value)}
+            />
+          </label>
+          <label htmlFor="condition">
+            Condition
+            <input
+              type="text"
+              name="condition"
+              id="condition"
+              defaultValue={condition}
+              placeholder="Condition"
+              onChange={(e) => setCondition(e.target.value)}
+            />
+          </label>
         </div>
         <div className="car-contact-info">
           <h3>Contact Info</h3>
-          <input
-            type="text"
-            name="sellerType"
-            id="sellerType"
-            placeholder="Seller Type"
-            onChange={(e) => setSellerType(e.target.value)}
-          />
-          <input
-            type="text"
-            name="sellerName"
-            id="sellerName"
-            placeholder="Name"
-            onChange={(e) => setSellerName(e.target.value)}
-          />
-          <input
-            type="text"
-            name="sellerPhone"
-            id="sellerPhone"
-            placeholder="Phone"
-            onChange={(e) => setSellerPhone(e.target.value)}
-          />
-          <input
-            type="text"
-            name="location"
-            id="location"
-            placeholder="Location"
-            onChange={(e) => setLocation(e.target.value)}
-          />
+          <label htmlFor="sellerType">
+            Seller Type
+            <input
+              type="text"
+              name="sellerType"
+              id="sellerType"
+              defaultValue={sellerType}
+              placeholder="Seller Type"
+              onChange={(e) => setSellerType(e.target.value)}
+            />
+          </label>
+          <label htmlFor="sellerName">
+            Seller Name
+            <input
+              type="text"
+              name="sellerName"
+              id="sellerName"
+              defaultValue={sellerName}
+              placeholder="Name"
+              onChange={(e) => setSellerName(e.target.value)}
+            />
+          </label>
+          <label htmlFor="sellerPhone">
+            Seller Phone
+            <input
+              type="text"
+              name="sellerPhone"
+              id="sellerPhone"
+              defaultValue={sellerPhone}
+              placeholder="Phone"
+              onChange={(e) => setSellerPhone(e.target.value)}
+            />
+          </label>
+          <label htmlFor="location">
+            Location
+            <input
+              type="text"
+              name="location"
+              id="location"
+              defaultValue={location}
+              placeholder="Location"
+              onChange={(e) => setLocation(e.target.value)}
+            />
+          </label>
         </div>
       </div>
       <div className="listing-form-btn">
-        <button onClick={postCarListing}>Submit</button>
+        <button onClick={postCarListing} className="submit">
+          Submit
+        </button>
       </div>
     </div>
   );

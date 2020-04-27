@@ -1,5 +1,6 @@
 import React from 'react';
 import './itemDetails.scss';
+import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
 
@@ -24,6 +25,7 @@ function ItemDetails(props) {
   console.log(data);
   if (data) {
     const {
+      id,
       title,
       price,
       description,
@@ -42,15 +44,13 @@ function ItemDetails(props) {
             alt={title}
             className="item-details-img"
           />
-          <div className="item-details-left-text">
-            <h1>{title}</h1>
-            <h2>${price}</h2>
-            <h3>Seller Name: {sellerName}</h3>
-            <h3>Seller Phone: {sellerPhone}</h3>
-            <h3>Location: {location}</h3>
-          </div>
         </div>
         <div className="item-details-text">
+          <h1>{title}</h1>
+          <h2>${price}</h2>
+          <h3>Seller Name: {sellerName}</h3>
+          <h3>Seller Phone: {sellerPhone}</h3>
+          <h3>Location: {location}</h3>
           <h3>
             Description:{' '}
             <span style={{ fontWeight: 'normal' }}>{description}</span>
@@ -61,6 +61,9 @@ function ItemDetails(props) {
           <h3>
             Category: <span style={{ fontWeight: 'normal' }}>{category}</span>
           </h3>
+          <div className="edit-btn-wrap">
+            <Link to={`/edit-item/${id}`}>Edit Item</Link>
+          </div>
         </div>
       </div>
     );

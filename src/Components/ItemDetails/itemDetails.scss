@@ -2,15 +2,20 @@
 
 .item-details-wrap {
   width: 90%;
+  height: 100vh;
   display: flex;
-  justify-content: center;
   margin-top: 70px;
-  margin-bottom: 90px;
-  padding: 40px 0px;
+  padding-top: 40px;
   color: white;
 }
 .item-details-left {
   margin-right: 30px;
+}
+.item-details-text {
+  h1 {
+    margin: 0;
+    margin-bottom: 20px;
+  }
 }
 
 @media only screen and (max-width: 48rem) {
@@ -27,17 +32,13 @@
       height: auto;
     }
   }
-  .item-details-left-text {
+  .item-details-text {
     width: 100%;
-    margin-left: 20px;
+    margin-top: 40px;
     h1 {
       margin: 0;
       margin-bottom: 20px;
     }
-  }
-  .item-details-text {
-    width: 100%;
-    margin-top: 40px;
   }
 }
 
