@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './carDetails.scss';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function CarDetails(props) {
   const [carData, setCarData] = useState();
@@ -132,6 +133,9 @@ function CarDetails(props) {
           <div>
             <h3>Drive Type:</h3>
             <p>{driveType}</p>
+          </div>
+          <div className="edit-btn-wrap">
+            <Link to={`/edit-car/${_id}`}>Edit Car</Link>
           </div>
         </div>
       </div>

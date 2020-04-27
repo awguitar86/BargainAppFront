@@ -191,19 +191,72 @@
   width: 100%;
   margin-top: 20px;
   button {
-    width: 200px;
+    width: 170px;
     height: 40px;
+    margin-right: 30px;
     border: none;
     border-radius: 5px;
-    color: white;
-    background: $blue;
     font-size: 11pt;
     font-family: $font;
     font-weight: 600;
     cursor: pointer;
     transition: ease-in-out 0.3s;
-    &:hover {
-      background: darken($blue, 10%);
-    }
+  }
+}
+.delete-check {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  h3 {
+    color: $red;
+  }
+}
+.delete-check-btns {
+  width: 100%;
+  button {
+    width: 170px;
+    height: 40px;
+    margin-right: 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 11pt;
+    font-family: $font;
+    font-weight: 600;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+  }
+}
+.update {
+  color: white;
+  background: $blue;
+  &:hover {
+    background: darken($blue, 10%);
+  }
+}
+.delete {
+  background: $red;
+  color: white;
+  &:hover {
+    background: darken($red, 10%);
+  }
+}
+.cancel {
+  background: $light;
+  color: $darkDark;
+  &:hover {
+    background: darken($light, 10%);
+  }
+}
+
+.edit-car-wrap {
+  width: 90%;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin-bottom: 40px;
+  h1 {
+    margin: 0;
+    margin-top: 20px;
   }
 }

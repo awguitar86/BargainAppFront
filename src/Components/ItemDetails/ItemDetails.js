@@ -13,7 +13,6 @@ function ItemDetails(props) {
         condition
         description
         price
-        isFirmOnPrice
         location
         imageUrl
         sellerName
@@ -31,7 +30,6 @@ function ItemDetails(props) {
       category,
       condition,
       location,
-      isFirmOnPrice,
       imageUrl,
       sellerName,
       sellerPhone,
@@ -62,12 +60,6 @@ function ItemDetails(props) {
           </h3>
           <h3>
             Category: <span style={{ fontWeight: 'normal' }}>{category}</span>
-          </h3>
-          <h3>
-            Firm on Price:{' '}
-            <span style={{ fontWeight: 'normal' }}>
-              {isFirmOnPrice ? 'Yes' : 'No'}
-            </span>
           </h3>
         </div>
       </div>

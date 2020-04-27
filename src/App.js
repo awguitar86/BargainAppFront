@@ -11,6 +11,8 @@ import Items from './Components/Items/Items';
 // import Sidebar from './Components/Sidebar/Sidebar';
 import ItemDetails from './Components/ItemDetails/ItemDetails';
 import Sell from './Components/Sell/Sell';
+import EditCar from './Components/Edit/EditCar';
+import EditItem from './Components/Edit/EditItem';
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
           <Route exact path="/items" component={Items} />
           <Route path="/items/:id" component={ItemDetails} />
           <Route path="/sell" component={Sell} />
+          <Route path="/edit-car/:id" component={EditCar} />
+          <Route path="/edit-item/:id" component={EditItem} />
         </Switch>
       </div>
       <MainFooter />

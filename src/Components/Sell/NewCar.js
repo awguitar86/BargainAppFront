@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import './sell.scss';
 import axios from 'axios';
 
@@ -24,6 +25,7 @@ function NewCar() {
   const [sellerName, setSellerName] = useState();
   const [sellerPhone, setSellerPhone] = useState();
   const [location, setLocation] = useState();
+  const history = useHistory();
 
   const handleFileChange = (e) => {
     const file = e.target.files[0]; // accesing file
@@ -82,7 +84,11 @@ function NewCar() {
           body: JSON.stringify(data),
         })
           .then((res) => {
-            console.log(res);
+            // console.log(res);
+            return res.json();
+          })
+          .then((resData) => {
+            history.push(`/cars/${resData.car._id}`);
           })
           .catch((err) => {
             throw err;
