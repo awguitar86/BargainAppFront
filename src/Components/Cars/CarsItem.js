@@ -19,7 +19,9 @@ function CarsItem(props) {
     <Link to={`/cars/${id}`} className="car-item">
       <div className="car-image-wrap">
         <img
-          src={`http://localhost:8080/${imageUrls ? imageUrls[0] : imageUrl}`}
+          src={`http://178.128.180.91:8080/${
+            imageUrls ? imageUrls[0] : imageUrl
+          }`}
           alt="car"
           className="car-img"
         />

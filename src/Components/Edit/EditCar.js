@@ -30,7 +30,7 @@ function EditCar(props) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/cars/${props.match.params.id}`)
+      .get(`http://178.128.180.91:8080/cars/${props.match.params.id}`)
       .then((res) => {
         console.log(res);
         setYear(Number(res.data.car.year));
@@ -70,7 +70,7 @@ function EditCar(props) {
     e.preventDefault();
     const formData = new FormData();
     formData.append('image', file);
-    let url = 'http://localhost:8080/image';
+    let url = 'http://178.128.180.91:8080/image';
     let method = 'POST';
     fetch(url, {
       method: method,
@@ -107,7 +107,7 @@ function EditCar(props) {
           sellerName: sellerName,
           sellerPhone: sellerPhone,
         };
-        fetch(`http://localhost:8080/cars/${props.match.params.id}`, {
+        fetch(`http://178.128.180.91:8080/cars/${props.match.params.id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
@@ -133,7 +133,7 @@ function EditCar(props) {
 
   const deleteCarListing = () => {
     axios
-      .delete(`http://localhost:8080/cars/${props.match.params.id}`)
+      .delete(`http://178.128.180.91:8080/cars/${props.match.params.id}`)
       .then((res) => {
         console.log(res);
         history.push('/cars');

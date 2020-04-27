@@ -8,7 +8,7 @@ function CarDetails(props) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/cars/${props.match.params.id}`)
+      .get(`http://178.128.180.91:8080/cars/${props.match.params.id}`)
       .then((res) => {
         console.log(res);
         setCarData(res.data.car);
@@ -55,7 +55,9 @@ function CarDetails(props) {
       <div className="car-details-wrap">
         <div className="car-left">
           <img
-            src={`http://localhost:8080/${imageUrl ? imageUrl : imageUrls[0]}`}
+            src={`http://178.128.180.91:8080/${
+              imageUrl ? imageUrl : imageUrls[0]
+            }`}
             alt="car"
           />
           <div className="car-left-text">

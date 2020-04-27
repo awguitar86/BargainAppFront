@@ -69,7 +69,7 @@ function NewItem() {
   const handleCreateItem = () => {
     const formData = new FormData();
     formData.append('image', file);
-    let url = 'http://localhost:8080/image';
+    let url = 'http://178.128.180.91:8080/image';
     let method = 'POST';
     fetch(url, {
       method: method,
