@@ -8,7 +8,7 @@ function CarDetails(props) {
 
   useEffect(() => {
     axios
-      .get(`http://178.128.180.91:8080/cars/${props.match.params.id}`)
+      .get(`https://bargain.netlify.app/cars/${props.match.params.id}`)
       .then((res) => {
         console.log(res);
         setCarData(res.data.car);
