@@ -32,8 +32,11 @@ function Cars() {
   const handleSelectMake = (selected) => {
     console.log(selected);
     setMake(selected);
+  };
+
+  const updateSelecttion = () => {
     axios
-      .get(`https://bargainapp.dev/cars/make/${selected.value}`)
+      .get(`https://bargainapp.dev/cars/make/${make.value}`)
       .then((res) => {
         console.log(res.data.cars);
         setCarData(res.data.cars);
@@ -69,11 +72,12 @@ function Cars() {
         <Select
           placeholder="Select Make..."
           className="select"
-          name="select"
-          id="select"
           options={makeOptions}
           onChange={handleSelectMake}
         />
+        <button onClick={updateSelecttion} className="update-select-btn">
+          Update
+        </button>
       </div>
       <div className="cars-items-wrap">{displayCars}</div>
     </div>
