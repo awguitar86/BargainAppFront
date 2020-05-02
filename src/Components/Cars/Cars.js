@@ -2,9 +2,25 @@ import React, { useState, useEffect } from 'react';
 import './cars.scss';
 import CarsItem from './CarsItem';
 import axios from 'axios';
+import Select from 'react-select';
+
+const makeOptions = [
+  { value: 'Toyota', label: 'Toyota' },
+  { value: 'Chevrolet', label: 'Chevrolet' },
+  { value: 'Tesla', label: 'Tesla' },
+  { value: 'Ford', label: 'Ford' },
+  { value: 'Lotus', label: 'Lotus' },
+  { value: 'BMW', label: 'BMW' },
+  { value: 'Hyundai', label: 'Hyundai' },
+  { value: 'Honda', label: 'Honda' },
+  { value: 'Kia', label: 'Kia' },
+  { value: 'GMC', label: 'GMC' },
+  { value: 'Mercedes-Benz', label: 'Mercedes-Benz' },
+];
 
 function Cars() {
   const [carData, setCarData] = useState([]);
+  const [make, setMake] = useState({});
 
   useEffect(() => {
     axios.get('https://bargainapp.dev/cars').then((res) => {
@@ -12,6 +28,20 @@ function Cars() {
       setCarData(res.data.cars);
     });
   }, []);
+
+  const handleSelectMake = (selected) => {
+    console.log(selected);
+    setMake(selected);
+    axios
+      .get(`https://bargainapp.dev/cars/make/${selected.value}`)
+      .then((res) => {
+        console.log(res.data.cars);
+        setCarData(res.data.cars);
+      })
+      .catch((err) => {
+        throw err;
+      });
+  };
 
   const displayCars = !carData
     ? null
@@ -34,7 +64,17 @@ function Cars() {
 
   return (
     <div className="cars-wrap">
-      <h2>Cars</h2>
+      <div className="cars-header">
+        <h2>Cars</h2>
+        <Select
+          placeholder="Select Make..."
+          className="select"
+          name="select"
+          id="select"
+          options={makeOptions}
+          onChange={handleSelectMake}
+        />
+      </div>
       <div className="cars-items-wrap">{displayCars}</div>
     </div>
   );
